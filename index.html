@@ -33,119 +33,146 @@
           </div>
       </header>
       <!--Empieza el formulario -->
-       <form action="" class="form-inline" id="formulario">
-      <div class="container">
-          
-            <h4>Información Personal</h4>    
-         
-        <div class="form-row">       
-          <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-            <label>Nombre del Proyecto:</label> 
-                <input class="form-control" type="text" name="nom_proy" placeholder="Introduzca el Nombre del proyecto" required>
-            </div>
-             <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-            <label>Número de Reporte:</label>
-                <input class="form-control" type="number" name="num_rep" placeholder="Introduzca el Numero de reporte">
-            </div>
-        
-          <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-            <label>Nombre del Solicitante, o Empresa que solicita el permiso:</label>
-                <input class= "form-control" type="text" name="nom_sol" placeholder="Introduzca el Nombre del solicitante o empresa" required>
-          </div>
-        </div> 
+    <form action="" class="form-inline" id="formulario">
+<!--    Empieza el primer contenedor  -->
+    <div class="container">
+          <!--1era Seccion -->
+        <h4>Información Personal</h4>
+          <!--Primera fila de preguntas -->
+            <div class="form-row">       
+                <!-- Bloque de nombre de proyecto    -->
+                <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
+                    <label>Nombre del Proyecto:</label> 
+                    <input class="form-control" type="text" name="nom_proy" placeholder="Introduzca el Nombre del proyecto" required>
+                </div>
+                <!-- Bloque de numero de reporte    -->
+                <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
+                    <label>Número de Reporte:</label>
+                    <input class="form-control" type="number" name="num_rep" placeholder="Introduzca el Numero de reporte">
+                </div>
+                <!-- Bloque de nombre del solicitante    -->
+                <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
+                    <label>Nombre del Solicitante, o Empresa que solicita el permiso:</label>
+                    <input class= "form-control" type="text" name="nom_sol" placeholder="Introduzca el Nombre del solicitante o empresa" required>
+                </div>
+            </div> 
               
-              
+            <!--Segunda fila de preguntas -->  
             <div class="form-row"> 
-            <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-                <label>RUC (Registro Único de Contribuyentes):</label>
-                <input class="form-control" type="text" name="ruc" placeholder="Introduzca el RUC de la empresa">
-                </div>    
-           <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-            <label>Correo electrónico: </label>
-                 <span class="help-block">Ejemplo: innovacion@gob.pa, etc. </span>
-                <input class= "form-control" type="text" name="correo" placeholder="Introduzca el Correo del solicitante o empresa" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}">
-               </div>
-             <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">   
-            <label>Número de Telefono fijo:</label>
-                  <span class="help-block">Ejemplo: 230-1234, etc. </span>
-                <input class="form-control" type="text" name="num_fijo" placeholder="Introduzca el telefono fijo" pattern="[0-9]{3}-[0-9]{4}">
-               </div>
+                <!-- Bloque de RUC    -->    
+                <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
+                    <label>RUC (Registro Único de Contribuyentes):</label>
+                    <input class="form-control" type="text" name="ruc" placeholder="Introduzca el RUC de la empresa">
+                </div>   
+                <!-- Bloque de correo electronico   -->
+                <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
+                    <label>Correo electrónico: </label>
+                    <span class="help-block">Ejemplo: innovacion@gob.pa, etc. </span>
+                    <input class= "form-control" type="text" name="correo" placeholder="Introduzca el Correo del solicitante o empresa" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}">
+                </div>
+                <!--Bloque de numero de telefono -->
+                <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">   
+                    <label>Número de Telefono fijo:</label>
+                    <span class="help-block">Ejemplo: 230-1234, etc. </span>
+                    <input class="form-control" type="text" name="num_fijo" placeholder="Introduzca el telefono fijo" pattern="[0-9]{3}-[0-9]{4}">
+                </div>
               </div> 
               
-            <div class="form-row">
+            <!-- Tercer fila de pregunta -->
+             <div class="form-row">
+             <!--Bloque de numero de celular -->     
                <div class="form-group col-12 col-sm-12 col-md-12" id="cajas">
                    <label>Número de Celular:</label> <!--       <span class="help-block">Ejemplo: 6123-4567, etc. </span>-->
-                <input class="form-control" type="text" name="num_cel" placeholder="Introduzca el numero de celular" pattern="[0-9]{4}-[0-9]{4}">
-                    </div>
-          </div></div>
+                   <input class="form-control" type="text" name="num_cel" placeholder="Introduzca el numero de celular" pattern="[0-9]{4}-[0-9]{4}">
+               </div>
+             </div>
+        </div><!-- Cerrando primer contenedor -->
+        
+        <!--Empieza el segundo contenedor -->
            <div class="container">
                 <div class="clearfix">
               <h4>Fecha y hora en que se estará realizando el trabajo</h4>
               </div>
            
-             
+             <!--Grupo de preguntas -->
               <div class="form-row">
-          <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-            <label>Fecha del día en que se estará realizando el trabajo: </label>
-                <input class= "form-control" type="date" name="dia">
+                    <!--Bloque de fecha del dia -->
+                  <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
+                    <label>Fecha del día en que se estará realizando el trabajo: </label>
+                    <input class= "form-control" type="date" name="dia">
                   </div>
-          <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">          
-            <label>Hora de inicio del trabajo:</label>
-               <span class="help-block">Formato 00:00 - 23:59. </span>
-                <input class="form-control" type="time" name="hora_inicio">
+                    <!--Bloque de inicio de trabajo -->
+                  <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">          
+                    <label>Hora de inicio del trabajo:</label>
+                    <span class="help-block">Formato 00:00 - 23:59. </span>
+                    <input class="form-control" type="time" name="hora_inicio">
                   </div>
-            <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">      
-            <label>Hora de finalización del trabajo:</label>
-                <span class="help-block">Formato 00:00 - 23:59. </span>
-                <input class="form-control" type="time" name="hora_fin">
+                    <!--Bloque de finalizacion de trabajo -->
+                  <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">      
+                    <label>Hora de finalización del trabajo:</label>
+                    <span class="help-block">Formato 00:00 - 23:59. </span>
+                    <input class="form-control" type="time" name="hora_fin">
                   </div>    
-                  
-                  
-              <button class="btn-primary" id="añadir" style="margin-top: 10px;">¡Añadir otro día diferente!</button>
-          </div>
-           </div>
+                    <!--Boton de anadir otro dia, FALTA LA FUNCION DE AGREGAR OTRA FECHA -->
+                  <button class="btn-primary" id="añadir" style="margin-top: 10px;">¡Añadir otro día diferente!</button>
+               </div>
+           </div><!-- Cerrando segundo contenedor -->
+        
+        <!--Empieza el tercer contenedor -->
            <div class="container">
               <div class="clearfix"><h4>Descripción del trabajo:</h4></div> 
-              
+               
+              <!--Grupo de preguntas -->
               <div class="form-row">
-          
-              <div class="form-group col-12 col-sm-12 col-md-6" id="cajas"> 
-            <label>Tipo de permiso: </label>
-              <select class="custom-select" name="tipo_permiso">
-              <option value="carga_descarga">Carga y Descarga de materiales</option>
-              <option value="mov_tierra">Movimiento de Tierra</option>
-              <option value="cierre_via">Cierre parcial de vía</option>
-              <option value="cableado">Cableado</option>
-              <option value="otro">Otro</option>  
-             </select>
+                  <!-- Bloque de tipo de permiso -->
+                  <div class="form-group col-12 col-sm-12 col-md-6" id="cajas"> 
+                     <label>Tipo de permiso: </label>
+                     <select class="custom-select" name="tipo_permiso">
+                     <option value="carga_descarga">Carga y Descarga de materiales</option>
+                     <option value="mov_tierra">Movimiento de Tierra</option>
+                     <option value="cierre_via">Cierre parcial de vía</option>
+                     <option value="cableado">Cableado</option>
+                     <option value="otro">Otro</option>  
+                     </select>
                   </div>
-            <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">       
-            <label>Motivo:</label><br>
-                <textarea class="form-control" placeholder="Especifique el motivo detallado del trabajo" form="formulario" name="motivo" rows="4" cols="50"> </textarea>
-              
+                  <!-- Bloque del motivo -->
+                  <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">       
+                     <label>Motivo:</label><br>
+                     <textarea class="form-control" placeholder="Especifique el motivo detallado del trabajo" form="formulario" name="motivo" rows="4" cols="50"> </textarea>
+                  </div>
                </div>
-               </div>
-           </div><div class="container">
-                  <div class="clearfix"><h4>Lugar donde se realizará el trabajo:</h4></div>
+             </div> <!-- Cerrando tercer contenedor -->
+        
+            <!--Empieza el cuarto contenedor -->   
+           <div class="container">
+               <div class="clearfix"><h4>Lugar donde se realizará el trabajo:</h4></div>
               <!--Mapa de google con javascript-->
-              <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12" id="map" style="border: 1px solid black;"></div></div>
-              
-            <div class="row">
+              <!--Grupo que contiene el mapa -->
+               <div class="row">
+                   <!-- Bloque del mapa -->
+                    <div class="col-12 col-sm-12 col-md-12" id="map" style="border: 1px solid black;"></div>
+               </div>
+              <!-- Grupo que contiene la latitud y longitud -->
+               <div class="row">
+                   <!-- Bloque de latitud -->
                   <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">    
                       <label>Latitud:</label>
-                      <input class="form-control"type="text" id="lat" readonly="yes"></div>
-                      <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">   
-              <label>Longitud:</label>
-                <input class="form-control" type="text" id="lng" readonly="yes">
+                      <input class="form-control"type="text" id="lat" readonly="yes">
                   </div>
-           </div>
+                   <!--Bloque de Longitud -->
+                  <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">   
+                      <label>Longitud:</label>
+                      <input class="form-control" type="text" id="lng" readonly="yes">
+                  </div>
+               </div>
+               <!-- Grupo que contiene el boton de submit -->
               <div class="row" style="margin-top: 20px;">
+               <!-- Bloque de enviar -->  
                   <div class="col">
-              <input type="submit" class="btn-primary" value="Enviar Solicitud"></div>
-          </div>
-       
-      </div>
+                    <input type="submit" class="btn-primary" value="Enviar Solicitud">
+                  </div>
+              </div>
+            </div> <!-- Cerrando cuarto contenedor -->
               </form>
     <footer>
       <div class="container">
