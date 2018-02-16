@@ -10,21 +10,16 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">    
     <link rel="stylesheet" href="css/solicitud.css">
-       <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-       
+    <link rel="icon" type="image/png" href="static/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="static/favicon-16x16.png" sizes="16x16" />
+
     <title>Solicitud de permiso de vía</title>
-    <script>
-        /*$("#añadir").click(function(){
-            var elemento = '<div><label>Fecha del día en que se estará realizando el trabajo: </label><input class= "" type="date" id="dia"><label>Hora de inicio del trabajo:</label><input class="" type="time" id="hora_inicio"><label>Hora de finalización del trabajo:</label><input class="" type="time" id="hora_fin">';
-            $("#contenedor").append(elemento);
-        });*/
-      </script>
   </head>
   <body>
       <!-- Parte de arriba del banner -->
       <header class="banner">
           <div class="container">
-              <div class="row">
+              <div class="row" >
                   <img class="img-responsive col-5 col-sm-4 col-md-2" src="static/logoattt.png" height="150px" width="120px" style="margin-bottom: 10px;">
                   <div class="col-7 col-sm-8 col-md-10">
                   <h3 style="margin-top: 30px;">Solicitud de Trabajo en vía <br> </h3>
@@ -33,11 +28,12 @@
           </div>
       </header>
       <!--Empieza el formulario -->
-    <form class="form-inline" id="formulario" data-toggle="validator">
+      <iframe name="votar" style="display:none;"></iframe>
+         <form class="form-inline" data-toggle="validator" method="post" action="php/datos_solicitud.php" target='votar' id="formulario">
 <!--    Empieza el primer contenedor  -->
-    <div class="container">
+           <div class="container">
           <!--1era Seccion -->
-        <h4>Información Personal</h4>
+        <h4>Información Personal: <br><small>Para especificar que persona exactamente esta solicitando el trabajo en vía y poder comunicarnos con el después.</small></h4>
           <!--Primera fila de preguntas -->
             <div class="form-row">       
                 <!-- Bloque de nombre de proyecto    -->
@@ -91,11 +87,11 @@
                </div>
              </div>
         </div><!-- Cerrando primer contenedor -->
-        
+             
         <!--Empieza el segundo contenedor -->
            <div class="container">
                 <div class="clearfix">
-              <h4>Fecha y hora en que se estará realizando el trabajo</h4>
+              <h4>Fecha y hora en que se estará realizando el trabajo: <br><small>Para especificar que día o días y horas se estará realizando el trabajo.</small></h4>
               </div>
            
              <!--Grupo de preguntas -->
@@ -103,28 +99,32 @@
                     <!--Bloque de fecha del dia -->
                   <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
                     <label>Fecha del día en que se estará realizando el trabajo:*</label>
-                    <input class= "form-control" type="date" name="dia">
+                    <input class= "form-control" type="date" name="dia[]">
                   </div>
                     <!--Bloque de inicio de trabajo -->
                   <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">          
                     <label>Hora de inicio del trabajo:*</label>
                     <span class="help-block">Formato 00:00 - 23:59. </span>
-                    <input class="form-control" type="time" name="hora_inicio">
+                    <input class="form-control" type="time" name="hora_inicio[]">
                   </div>
                     <!--Bloque de finalizacion de trabajo -->
                   <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">      
                     <label>Hora de finalización del trabajo:*</label>
                     <span class="help-block">Formato 00:00 - 23:59. </span>
-                    <input class="form-control" type="time" name="hora_fin">
+                    <input class="form-control" type="time" name="hora_fin[]">
                   </div>    
-                    <!--Boton de anadir otro dia, FALTA LA FUNCION DE AGREGAR OTRA FECHA -->
-                  <button class="btn-primary" id="añadir" style="margin-top: 10px;">¡Añadir otro día diferente!</button>
                </div>
-           </div><!-- Cerrando segundo contenedor -->
-        
+           </div>
+           <div class="container" id="fecha">
+            <!--Boton de anadir otro dia, FALTA LA FUNCION DE AGREGAR OTRA FECHA -->
+               <h5>Para añadir otro día, presione el botón (Maxímo 10): </h5>
+                  <button class="btn-primary" id="añadir" style="margin-top: 10px; margin-bottom:20px;" onClick="addInput('fecha');">+ ¡Añadir otro día diferente!</button>
+               <span id="cantidad_dia"> Llevas 1 día.</span>
+        </div><!-- Cerrando segundo contenedor -->
+             
         <!--Empieza el tercer contenedor -->
            <div class="container">
-              <div class="clearfix"><h4>Descripción del trabajo:</h4></div> 
+              <div class="clearfix"><h4>Descripción del trabajo:<br><small>Para especificar que tipo de trabajo se estará realizando.</small></h4></div> 
                
               <!--Grupo de preguntas -->
               <div class="form-row">
@@ -132,16 +132,16 @@
                   <div class="form-group col-12 col-sm-12 col-md-6" id="cajas"> 
                      <label>Tipo de permiso: </label>
                      <select class="custom-select" name="tipo_permiso">
-                     <option value="carga_descarga">Carga y Descarga de materiales</option>
-                     <option value="mov_tierra">Movimiento de Tierra</option>
-                     <option value="cierre_via">Cierre parcial de vía</option>
-                     <option value="cableado">Cableado</option>
-                     <option value="otro">Otro</option>  
+                     <option value="Carga y Descarga de materiales">Carga y Descarga de materiales</option>
+                     <option value="Movimiento de tierra">Movimiento de Tierra</option>
+                     <option value="Cierre parcial de vía">Cierre parcial de vía</option>
+                     <option value="Cableado">Cableado</option>
+                     <option value="Otro">Otro</option>  
                      </select>
                   </div>
                   <!-- Bloque del motivo -->
                   <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">       
-                     <label>Motivo:*</label><br>
+                     <label>Motivo:*</label>
                      <textarea class="form-control" placeholder="Especifique el motivo detallado del trabajo" form="formulario" name="motivo" rows="4" cols="50" required data-required-error="Por favor llene este campo" required></textarea><div class="help-block with-errors text-danger"></div>
                   </div>
                </div>
@@ -149,7 +149,7 @@
         
             <!--Empieza el cuarto contenedor -->   
            <div class="container">
-               <div class="clearfix"><h4>Lugar donde se realizará el trabajo:</h4></div>
+               <div class="clearfix"><h4>Lugar donde se realizará el trabajo:<br><small>Para especificar en que lugar especificamente se estará realizando el trabajo.</small></h4></div>
               <!--Mapa de google con javascript-->
               <!--Grupo que contiene el mapa -->
                <div class="row">
@@ -161,34 +161,43 @@
                    <!-- Bloque de latitud -->
                   <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">    
                       <label>Latitud:</label>
-                      <input class="form-control"type="text" id="lat" readonly="yes">
+                      <input class="form-control"type="text" id="lat" name="latitud">
                   </div>
                    <!--Bloque de Longitud -->
                   <div class="form-group col-12 col-sm-12 col-md-6" id="cajas">   
                       <label>Longitud:</label>
-                      <input class="form-control" type="text" id="lng" readonly="yes">
+                      <input class="form-control" type="text" id="lng" name="longitud">
                   </div>
                </div>
                <!-- Grupo que contiene el boton de submit -->
               <div class="row" style="margin-top: 20px;">
                <!-- Bloque de enviar -->  
                   <div class="col">
-                    <input type="submit" class="btn-primary" value="Enviar Solicitud">
+                    <input type="submit" name="submit" class="btn-primary" value="Enviar Solicitud" onclick="arriba()">
                   </div>
+                  
               </div>
             </div> <!-- Cerrando cuarto contenedor -->
-              </form>
-    <footer>
+          </form>
+<!--      Empieza el footer-->
+    <footer> 
       <div class="container">
         <p></p>
         </div>
       </footer>
     <!-- JavaScript -->
+    <script>
+      function arriba (){
+      $('html, body').animate({ scrollTop: 0 }, 'fast');
+      }
+    </script>  
+    <script src="js/googlemaps.js"></script> 
     <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtVAySZOYON8axKpSJVlwntqvilw56dQA&callback=initMap">
     </script>
-    <script src="js/googlemaps.js"></script>  
-    <script src="js/jquery-3.3.1.min.js"></script>
+    
+    <script src="js/jquery-3.3.1.min.js"></script>  
+    <script src="js/fechaydia.js"></script>   
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
