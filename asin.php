@@ -1,13 +1,10 @@
 <?php
 
-$co=$_POST['name'];
- //if(isset($_POST['data'])){
-     //include("php/Conexion.php");
-     //$tipo=$_POST['data'];
-     //$obj=new Conexion();
-
-     echo $co." hola2";
+ if(isset($_POST['name'])){
+     include("php/Conexion.php");
+     $tipo=$_POST['name'];
+     $obj=new Conexion();
+     echo $obj->get_adjunto($tipo);
     
-
- //}
+ }
  ?>
