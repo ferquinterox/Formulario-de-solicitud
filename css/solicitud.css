@@ -24,21 +24,25 @@ body{ /*CSS del body */
     padding: 10px;
     border: 1px black solid;
     background-color: firebrick;
-}
-#cajas4{ /*CSS de todos los div con preguntas */
-    padding: 10px;
-    border: 1px black solid;
-    background-color: crimson;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 #cajas2{ /*CSS de todos los div con preguntas */
     padding: 10px;
     border: 1px black solid;
-    background-color: chocolate;
+    background-color: crimson;
 }
 #cajas3{ /*CSS de todos los div con preguntas */
     padding: 10px;
     border: 1px black solid;
+    background-color: chocolate;
+}
+#cajas4{ /*CSS de todos los div con preguntas */
+    padding: 10px;
+    border: 1px black solid;
     background-color: darkgoldenrod;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 /* Grupo del css de las cajas que contienen la descripcion de los tipos de permisos*/
 .banner_permiso{
@@ -87,6 +91,7 @@ label{ /* CSS de los labels o indicaciones */
     border: 1px black solid;
     border-radius: 10px;
     background-color: #ccdfff;
+    box-shadow: 5px 10px 8px #888888;
 }
 h4{ /*CSS de algunos titulos h4 */
     margin-top: 15px;
