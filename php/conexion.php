@@ -55,6 +55,7 @@ function get_adjunto($tipo){
             $SQLQuery=$SQLQuery."'4'";
         break;
         case 5:
+        // Este Caso devuelve todos los tipos de Solicitud en forma de <option>
         $SQLQuery="SELECT id_tipo_sol,nombre FROM `tipo_solicitud` ORDER BY id_tipo_sol ASC";
         $result =$this->con->query($SQLQuery);
         while($res=mysqli_fetch_assoc($result)){//el while se ejecuta mientras en el arreglo $result haya todavia elementos
@@ -70,11 +71,5 @@ function get_adjunto($tipo){
     $cadena = $cadena . '<script src="../js/jquery-3.3.1.min.js"></script> <script>$(function() { bs_input_file(); }); </script>';
     return $cadena;
 }
-function contar(){
-$SQLQuery="Select COUNT(id_adjunto) from adjunto";
-$result =$this->con->query($SQLQuery);
-    while($res=mysqli_fetch_assoc($result)){
-         return $res['COUNT(id_adjunto)']+1;
-}
-} 
+
 }
