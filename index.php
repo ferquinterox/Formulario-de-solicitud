@@ -1,5 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION['usr']))
+    header("Location:./Login");
+else {
+?>
 <html lang="es">
-
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -27,7 +32,7 @@
         <header class="banner">
             <div class="container">
                 <div class="row">
-                    <img class="img col-12 col-sm-4 col-md-2" src="../static/logoattt.png" height="150px" width="120px" style="margin-bottom: 10px; margin-top: 10px;">
+                    <img class="img col-12 col-sm-4 col-md-2" src="./static/logoattt.png" height="150px" width="120px" style="margin-bottom: 10px; margin-top: 10px;">
                     <div class="col-12 col-sm-8 col-md-10 ">
                         <h3 style="margin-top: 30px; color:white;">Solicitudes de permisos para la ATTT:<br> </h3>
                         <p style="color:white;">Estos formularios tienen el propósito de recolectar la información sobre los distintos permisos para ser aprobados por la Autoridad del Transito y Transporte Terrestre (ATTT).</p>
@@ -113,12 +118,14 @@
                             </div>
                             <div class="help-block with-errors text-danger"></div>
                         </div>
-                        <!-- Bloque de RUC -->
+                        <!-- Bloque de correo electronico -->
                         <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-                            <label data-trigger="hover click" data-container="body" data-toggle="popover" data-placement="top" data-content="En este espacio van el número que identifica e individualiza a los contribuyentes, personas físicas o jurídicas, para fines tributarios. Se compone de Nº de Asiento, Tomo y Folio. Ejemplo: 430-1-15000." title="RUC (Registro Único de Contribuyentes)">→ RUC (Registro Único de Contribuyentes):(?)</label>
+                            <label data-trigger="hover click" data-container="body" data-toggle="popover" data-placement="top" data-content="En este espacio va el correo del solicitante o de la empresa para comunicarnos con este. Ejemplo: innovacion@gob.pa" title="Correo Electrónico">→ Correo electrónico:*(?)</label>
                             <div class="large_input">
-                                <input class="form-control" type="text" name="ruc" placeholder="Introduzca el RUC de la empresa" tabindex="3"> </div>
+                                <input class="form-control" type="email" name="correo" data-error="Ingrese un correo valido" placeholder="Introduzca el Correo del solicitante o empresa" required tabindex="5"> </div>
+                            <div class="help-block with-errors text-danger"></div>
                         </div>
+                       
                     </div>
                     <!--Segunda fila de preguntas -->
                     <div class="form-row">
@@ -128,12 +135,11 @@
                             <div class="large_input">
                                 <input class="form-control" type="text" name="ruc" placeholder="Introduzca el nombre empresa" tabindex="4"> </div>
                         </div>
-                        <!-- Bloque de correo electronico -->
-                        <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
-                            <label data-trigger="hover click" data-container="body" data-toggle="popover" data-placement="top" data-content="En este espacio va el correo del solicitante o de la empresa para comunicarnos con este. Ejemplo: innovacion@gob.pa" title="Correo Electrónico">→ Correo electrónico:*(?)</label>
+                         <!-- Bloque de RUC -->
+                         <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
+                            <label data-trigger="hover click" data-container="body" data-toggle="popover" data-placement="top" data-content="En este espacio van el número que identifica e individualiza a los contribuyentes, personas físicas o jurídicas, para fines tributarios. Se compone de Nº de Asiento, Tomo y Folio. Ejemplo: 430-1-15000." title="RUC (Registro Único de Contribuyentes)">→ RUC (Registro Único de Contribuyentes):(?)</label>
                             <div class="large_input">
-                                <input class="form-control" type="email" name="correo" data-error="Ingrese un correo valido" placeholder="Introduzca el Correo del solicitante o empresa" required tabindex="5"> </div>
-                            <div class="help-block with-errors text-danger"></div>
+                                <input class="form-control" type="text" name="ruc" placeholder="Introduzca el RUC de la empresa" tabindex="3"> </div>
                         </div>
                         <!--Bloque de numero de telefono/celular -->
                         <div class="form-group col-12 col-sm-12 col-md-4" id="cajas">
@@ -302,5 +308,7 @@
             })
         </script>
 </body>
-
 </html>
+<?php
+}
+?>
