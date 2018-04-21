@@ -1,9 +1,4 @@
-<?php 
-session_start();
-if(!isset($_SESSION['usr']))
-    header("Location:./Login");
-else {
-?>
+
 <html lang="es">
 <head>
     <!-- Meta -->
@@ -309,6 +304,3 @@ else {
         </script>
 </body>
 </html>
-<?php
-}
-?>
